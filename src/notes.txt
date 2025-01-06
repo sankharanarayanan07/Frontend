@@ -1,0 +1,3 @@
+To send info form fe to be - we use axios
+To send info from be to fe - we use cread
+To route in fe - React-router-dom
