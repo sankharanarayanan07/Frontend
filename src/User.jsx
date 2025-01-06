@@ -8,7 +8,7 @@ const User = () =>
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/User/fetch")
+    axios.get("https://backenddemomern-u9uu.onrender.com/api/User/fetch")
       .then(result => {
         // console.log(result.data);
         setUser(result.data.users);
@@ -19,7 +19,7 @@ const User = () =>
   }, []);
 
   const deleteUser=(id)=>{
-      axios.delete(`http://localhost:3000/api/user/delete/${id}`)
+      axios.delete(`https://backenddemomern-u9uu.onrender.com/api/user/delete/${id}`)
       .then(result=>{
           console.log(result)
       })

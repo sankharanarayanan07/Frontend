@@ -12,7 +12,7 @@ const UpdateUser = () => {
     const navigate = useNavigate();
 
     useEffect(()=> {
-        axios.put(` http://localhost:3000/api/user/update/${id}`)
+        axios.put(`https://backenddemomern-u9uu.onrender.com/api/user/update/${id}`)
         .then(result=>{
 
             setName(result.data.name);
@@ -24,7 +24,7 @@ const UpdateUser = () => {
 
     const updateuser = (e) => {
         e.preventDefault();
-        axios.put(` http://localhost:3000/api/user/update/${id}`,{name,email,address})
+        axios.put(`https://backenddemomern-u9uu.onrender.com/api/user/update/${id}`,{name,email,address})
         .then (response=>{
             
             navigate('/');
