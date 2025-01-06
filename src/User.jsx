@@ -3,18 +3,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const User = () => {
-  const [users, setUsers] = useState([]);
+const User = () => 
+{
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
-    axios.get("https://backenddemomern-u9uu.onrender.com//api/User/fetch")
+    axios.get("http://localhost:3000/api/User/fetch")
       .then(result => {
-        setUsers(result.data.users);
+        // console.log(result.data);
+        setUser(result.data.users);
       })
       .catch(err => {
         console.log(err);
       });
   }, []);
+
+  const deleteUser=(id)=>{
+      axios.delete(`http://localhost:3000/api/user/delete/${id}`)
+      .then(result=>{
+          console.log(result)
+      })
+      .catch(err=>{console.log(err)})
+  }
+
+  
 
   return (
     <div>
@@ -32,14 +44,14 @@ const User = () => {
           </thead>
           <tbody>
             {
-              users.map((user, index) => (
-                <tr key={index}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{user.address}</td>
+              user.map((users) => (
+                <tr key={users.id}>
+                  <td>{users.name}</td>
+                  <td>{users.email}</td>
+                  <td>{users.address}</td>
                   <td>
-                    <Link to="/update"><button>Update</button></Link>
-                    <button>Delete</button>
+                    <Link to={`/update/${users._id}`}><button>Update</button></Link>
+                    <button onClick={() => deleteUser(users._id)}> Delete</button> {/* Corrected onClick */}
                   </td>
                 </tr>
               ))
