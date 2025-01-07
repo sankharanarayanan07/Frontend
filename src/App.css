@@ -1,0 +1,52 @@
+/* Table Styling */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    
+  }
+  
+  th, td {
+    border: 3px solid rgb(9, 21, 19);
+
+    padding: 8px;
+    text-align: center;
+    border-radius: 1%;
+    
+  }
+  
+  /* Header Styling */
+  thead {
+    background-color: #949697;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+
+  /* Form Styling */
+form {
+    max-width: 250px;
+
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input {
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  br {
+    display: none;
+  }
+  button{
+    margin-top: 30px;
+  }
+  
+  

@@ -27,7 +27,7 @@ const CreateUser=()=>{
           <form onSubmit={submit}>
               <label>Name : </label>
               <input type='text' onChange={(e)=>setName(e.target.value)}></input>
-              <br></br><br />
+              <br></br>
               <label>Email : </label>
               <input type='email' onChange={(e)=>setEmail(e.target.value)}></input><br></br><br />
               <label>Address : </label>
